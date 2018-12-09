@@ -8,23 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		7A4186A1216202BC004275AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4186A0216202BC004275AE /* AppDelegate.m */; };
-		7A4186A4216202BC004275AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4186A3216202BC004275AE /* ViewController.m */; };
 		7A4186A6216202BF004275AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4186A5216202BF004275AE /* Assets.xcassets */; };
 		7A4186A9216202BF004275AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4186A7216202BF004275AE /* Main.storyboard */; };
 		7A4186AC216202BF004275AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4186AB216202BF004275AE /* main.m */; };
+		7A4186C42162057D004275AE /* PsychologistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4186C32162057D004275AE /* PsychologistViewController.m */; };
+		7A4186C821620DBD004275AE /* HappinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4186C721620DBD004275AE /* HappinessViewController.m */; };
+		7A4186CB21620DE5004275AE /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4186CA21620DE5004275AE /* FaceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A41869C216202BC004275AE /* PsycologistForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsycologistForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A41869F216202BC004275AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A4186A0216202BC004275AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7A4186A2216202BC004275AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7A4186A3216202BC004275AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7A4186A5216202BF004275AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A4186A8216202BF004275AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A4186AA216202BF004275AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A4186AB216202BF004275AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A4186AD216202BF004275AE /* PsycologistForMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PsycologistForMac.entitlements; sourceTree = "<group>"; };
+		7A4186C22162057D004275AE /* PsychologistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PsychologistViewController.h; sourceTree = "<group>"; };
+		7A4186C32162057D004275AE /* PsychologistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PsychologistViewController.m; sourceTree = "<group>"; };
+		7A4186C621620DBD004275AE /* HappinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HappinessViewController.h; sourceTree = "<group>"; };
+		7A4186C721620DBD004275AE /* HappinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HappinessViewController.m; sourceTree = "<group>"; };
+		7A4186C921620DE5004275AE /* FaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceView.h; sourceTree = "<group>"; };
+		7A4186CA21620DE5004275AE /* FaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A31B6FC21645D4A006A5B48 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A41869F216202BC004275AE /* AppDelegate.h */,
+				7A4186A0216202BC004275AE /* AppDelegate.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7A31B6FD21645E04006A5B48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A4186A7216202BF004275AE /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7A418693216202BC004275AE = {
 			isa = PBXGroup;
 			children = (
@@ -57,17 +80,60 @@
 		7A41869E216202BC004275AE /* PsycologistForMac */ = {
 			isa = PBXGroup;
 			children = (
-				7A41869F216202BC004275AE /* AppDelegate.h */,
-				7A4186A0216202BC004275AE /* AppDelegate.m */,
-				7A4186A2216202BC004275AE /* ViewController.h */,
-				7A4186A3216202BC004275AE /* ViewController.m */,
+				7A31B6FD21645E04006A5B48 /* View */,
+				7A31B6FC21645D4A006A5B48 /* Controller */,
+				7A4186B921620397004275AE /* Psychologist */,
+				7A4186B821620385004275AE /* Happiness */,
 				7A4186A5216202BF004275AE /* Assets.xcassets */,
-				7A4186A7216202BF004275AE /* Main.storyboard */,
 				7A4186AA216202BF004275AE /* Info.plist */,
 				7A4186AB216202BF004275AE /* main.m */,
 				7A4186AD216202BF004275AE /* PsycologistForMac.entitlements */,
 			);
 			path = PsycologistForMac;
+			sourceTree = "<group>";
+		};
+		7A4186B821620385004275AE /* Happiness */ = {
+			isa = PBXGroup;
+			children = (
+				7A4186C1216203DC004275AE /* Controller */,
+				7A4186C0216203CD004275AE /* View */,
+			);
+			path = Happiness;
+			sourceTree = "<group>";
+		};
+		7A4186B921620397004275AE /* Psychologist */ = {
+			isa = PBXGroup;
+			children = (
+				7A4186C521620C80004275AE /* Controller */,
+			);
+			path = Psychologist;
+			sourceTree = "<group>";
+		};
+		7A4186C0216203CD004275AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A4186C921620DE5004275AE /* FaceView.h */,
+				7A4186CA21620DE5004275AE /* FaceView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7A4186C1216203DC004275AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A4186C621620DBD004275AE /* HappinessViewController.h */,
+				7A4186C721620DBD004275AE /* HappinessViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7A4186C521620C80004275AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A4186C22162057D004275AE /* PsychologistViewController.h */,
+				7A4186C32162057D004275AE /* PsychologistViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +205,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A4186A4216202BC004275AE /* ViewController.m in Sources */,
 				7A4186AC216202BF004275AE /* main.m in Sources */,
+				7A4186C42162057D004275AE /* PsychologistViewController.m in Sources */,
+				7A4186CB21620DE5004275AE /* FaceView.m in Sources */,
 				7A4186A1216202BC004275AE /* AppDelegate.m in Sources */,
+				7A4186C821620DBD004275AE /* HappinessViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

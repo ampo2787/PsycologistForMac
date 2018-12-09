@@ -1,9 +1,177 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="hgs-QM-n1r">
+            <objects>
+                <splitViewController id="mTK-JK-BOQ" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="pGd-q8-thT"/>
+                        <splitViewItem id="vF3-cl-u0u"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="g5r-CE-ReT">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="mTK-JK-BOQ" id="Vww-KP-xuf"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="g5r-CE-ReT" id="QfX-ph-sHs"/>
+                        <segue destination="DL3-IL-Wwh" kind="relationship" relationship="splitItems" id="4Zd-S0-KLg"/>
+                        <segue destination="UME-Wp-1hE" kind="relationship" relationship="splitItems" id="H3B-Kf-bm9"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="GZw-xe-FTI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-348"/>
+        </scene>
+        <!--Happiness View Controller-->
+        <scene sceneID="OLr-kx-kFb">
+            <objects>
+                <viewController id="UME-Wp-1hE" customClass="HappinessViewController" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="yeR-tT-7T8">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9Xt-Ja-iw3" customClass="FaceView">
+                                <rect key="frame" x="120" y="50" width="210" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="Jfd-Kk-0gO"/>
+                                    <constraint firstAttribute="height" constant="210" id="zej-Ic-qyF"/>
+                                </constraints>
+                            </customView>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UAk-Us-lcm">
+                                <rect key="frame" x="172" y="18" width="106" height="19"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="mEY-Z1-8Sd"/>
+                                <connections>
+                                    <action selector="happinessSliderChanged:" target="UME-Wp-1hE" id="gvq-Hw-PwG"/>
+                                </connections>
+                            </slider>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eYT-40-xJs">
+                                <rect key="frame" x="20" y="249" width="75" height="31"/>
+                                <buttonCell key="cell" type="square" title="←심리 상담" bezelStyle="shadowlessSquare" alignment="left" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BxD-Es-aex">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name="ArialUnicodeMS"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="backToPsychologistTouched:" target="UME-Wp-1hE" id="gJd-Ad-q0B"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yct-Wd-TkM">
+                                <rect key="frame" x="210" y="263" width="31" height="17"/>
+                                <textFieldCell key="cell" alignment="center" title="100" id="FaJ-aQ-4pn">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="9Xt-Ja-iw3" firstAttribute="top" secondItem="yct-Wd-TkM" secondAttribute="bottom" constant="3" id="2VT-Wv-fRf"/>
+                            <constraint firstItem="9Xt-Ja-iw3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eYT-40-xJs" secondAttribute="trailing" constant="8" symbolic="YES" id="DGt-VF-EKl"/>
+                            <constraint firstItem="yct-Wd-TkM" firstAttribute="top" secondItem="yeR-tT-7T8" secondAttribute="top" constant="20" id="IWC-mu-Bqq"/>
+                            <constraint firstAttribute="trailing" secondItem="9Xt-Ja-iw3" secondAttribute="trailing" constant="120" id="NuF-0H-Urj"/>
+                            <constraint firstItem="yct-Wd-TkM" firstAttribute="centerX" secondItem="UAk-Us-lcm" secondAttribute="centerX" id="SHP-8x-WJm"/>
+                            <constraint firstAttribute="bottom" secondItem="eYT-40-xJs" secondAttribute="bottom" constant="249" id="Ts9-3F-Qk2"/>
+                            <constraint firstItem="eYT-40-xJs" firstAttribute="top" secondItem="yeR-tT-7T8" secondAttribute="top" constant="20" id="Xgp-dh-A8V"/>
+                            <constraint firstItem="eYT-40-xJs" firstAttribute="leading" secondItem="yeR-tT-7T8" secondAttribute="leading" constant="20" symbolic="YES" id="ZJj-Rd-bXX"/>
+                            <constraint firstItem="UAk-Us-lcm" firstAttribute="top" secondItem="9Xt-Ja-iw3" secondAttribute="bottom" constant="15" id="gVh-GR-bYr"/>
+                            <constraint firstItem="yct-Wd-TkM" firstAttribute="centerX" secondItem="9Xt-Ja-iw3" secondAttribute="centerX" id="ing-cZ-2tK"/>
+                            <constraint firstAttribute="trailing" secondItem="UAk-Us-lcm" secondAttribute="trailing" constant="174" id="yYO-c8-2vE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backToPsychologistButton" destination="eYT-40-xJs" id="4UH-os-llx"/>
+                        <outlet property="faceView" destination="9Xt-Ja-iw3" id="nra-bj-Tgg"/>
+                        <outlet property="happinessLabel" destination="yct-Wd-TkM" id="Q4p-WW-x5U"/>
+                        <outlet property="happinessSlider" destination="UAk-Us-lcm" id="8Ig-zu-ezX"/>
+                    </connections>
+                </viewController>
+                <customObject id="xrS-2m-Lkp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682" y="-534"/>
+        </scene>
+        <!--Psychologist View Controller-->
+        <scene sceneID="s6B-uq-1RN">
+            <objects>
+                <viewController id="DL3-IL-Wwh" customClass="PsychologistViewController" sceneMemberID="viewController">
+                    <view key="view" id="UXJ-Lx-Ejd">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="272"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3i-52-FIW">
+                                <rect key="frame" x="178" y="215" width="94" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="nCL-li-y0C"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="오늘 어떠신가요?" id="rZN-LZ-iAY">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" red="0.26761055319999999" green="0.7051152409" blue="0.40556441529999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="0.99742268040000004" green="0.99484536079999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x4t-T5-gXz">
+                                <rect key="frame" x="186" y="160" width="78" height="17"/>
+                                <buttonCell key="cell" type="square" title="묻지 마시지요." bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="kfq-bz-ijM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sadButtonTouched:" target="DL3-IL-Wwh" id="6Et-95-l4u"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AH6-cG-WNw">
+                                <rect key="frame" x="188" y="105" width="73" height="17"/>
+                                <buttonCell key="cell" type="square" title="그저 그래요..." bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="3ew-ca-MHG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sosoButtonTouched:" target="DL3-IL-Wwh" id="8Wh-ns-8bZ"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bIw-CZ-PAh">
+                                <rect key="frame" x="183" y="50" width="82" height="17"/>
+                                <buttonCell key="cell" type="square" title="날아갈 듯 해요!" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="Ihd-N1-THV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="happyButtonTouched:" target="DL3-IL-Wwh" id="7EA-Pz-4wI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="x4t-T5-gXz" firstAttribute="top" secondItem="Q3i-52-FIW" secondAttribute="bottom" constant="38" id="42d-sj-2dt"/>
+                            <constraint firstItem="bIw-CZ-PAh" firstAttribute="top" secondItem="AH6-cG-WNw" secondAttribute="bottom" constant="38" id="7Vb-OK-F7p"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bIw-CZ-PAh" secondAttribute="trailing" constant="20" symbolic="YES" id="8Wt-A5-vup"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AH6-cG-WNw" secondAttribute="trailing" constant="20" symbolic="YES" id="9qe-Sp-ahg"/>
+                            <constraint firstItem="AH6-cG-WNw" firstAttribute="leading" secondItem="UXJ-Lx-Ejd" secondAttribute="leading" constant="188" id="DFV-CL-NXG"/>
+                            <constraint firstItem="Q3i-52-FIW" firstAttribute="centerX" secondItem="x4t-T5-gXz" secondAttribute="centerX" id="H7f-tH-e8P"/>
+                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="bIw-CZ-PAh" secondAttribute="bottom" constant="50" id="LVP-IU-xak"/>
+                            <constraint firstItem="AH6-cG-WNw" firstAttribute="top" secondItem="x4t-T5-gXz" secondAttribute="bottom" constant="38" id="YPn-xb-Gmz"/>
+                            <constraint firstItem="x4t-T5-gXz" firstAttribute="leading" secondItem="UXJ-Lx-Ejd" secondAttribute="leading" constant="186" id="YS7-eK-BAl"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="x4t-T5-gXz" secondAttribute="trailing" constant="20" symbolic="YES" id="Z86-j3-Uge"/>
+                            <constraint firstItem="bIw-CZ-PAh" firstAttribute="leading" secondItem="UXJ-Lx-Ejd" secondAttribute="leading" constant="183" id="aiP-CK-eRJ"/>
+                            <constraint firstItem="Q3i-52-FIW" firstAttribute="top" secondItem="UXJ-Lx-Ejd" secondAttribute="top" constant="40" id="cLx-U5-k0U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="happyButton" destination="bIw-CZ-PAh" id="QNo-7b-cnB"/>
+                        <outlet property="sadButton" destination="x4t-T5-gXz" id="bSl-T8-SCf"/>
+                        <outlet property="sosoButton" destination="AH6-cG-WNw" id="i0b-Ar-3IH"/>
+                    </connections>
+                </viewController>
+                <customObject id="LOV-Xz-MTB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682" y="-162"/>
+        </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
@@ -49,6 +217,31 @@
                                         <menuItem title="Quit PsycologistForMac" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Have Feel" id="CSp-s1-S6g">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Have Feel" id="szi-M7-PCp">
+                                    <items>
+                                        <menuItem title="Good" id="Gah-zz-uct">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="funnyClick:" target="Voe-Tx-rLC" id="5Ir-w5-KdB"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="soso" id="OSF-ww-Pcv">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="funnyClick:" target="Voe-Tx-rLC" id="r5a-lU-GfB"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Bad" id="uSA-1i-B4C">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="funnyClick:" target="Voe-Tx-rLC" id="WTS-1M-VvM"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -673,11 +866,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-370" y="-591"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -693,25 +886,12 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="mTK-JK-BOQ" kind="relationship" relationship="window.shadowedContentViewController" id="Dik-la-cwF"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
-            <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-564" y="-339"/>
         </scene>
     </scenes>
 </document>
